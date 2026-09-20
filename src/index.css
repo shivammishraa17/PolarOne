@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#070D1E] text-slate-100 font-sans min-h-screen overflow-x-hidden;
+  }
+}
+
+/* Custom Polar Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #070D1E;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E3566;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00E5FF;
+}
+
+/* Mission Control HUD Glass panels */
+.polar-panel {
+  background: rgba(17, 29, 59, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(30, 53, 102, 0.8);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.polar-card {
+  background: rgba(22, 37, 74, 0.65);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(30, 53, 102, 0.6);
+}
+
+.polar-border-glow {
+  border-color: #00E5FF;
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.25);
+}
+
+.polar-grid-bg {
+  background-size: 30px 30px;
+  background-image: linear-gradient(to right, rgba(30, 53, 102, 0.25) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(30, 53, 102, 0.25) 1px, transparent 1px);
+}
