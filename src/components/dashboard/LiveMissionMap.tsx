@@ -73,7 +73,7 @@ export const LiveMissionMap: React.FC = () => {
               </span>
             </h3>
             <p className="text-[11px] text-slate-400 font-mono">
-              Projection: South Polar Stereographic | Grid: {activeStation.coordinates[0]}° S, {activeStation.coordinates[1]}° E
+              Projection: {activeStation.coordinates[0] >= 0 ? 'Arctic Polar Stereographic' : 'South Polar Stereographic'} | Grid: {activeStation.coordinates[0] >= 0 ? `${activeStation.coordinates[0]}° N` : `${Math.abs(activeStation.coordinates[0])}° S`}, {activeStation.coordinates[1] >= 0 ? `${activeStation.coordinates[1]}° E` : `${Math.abs(activeStation.coordinates[1])}° W`}
             </p>
           </div>
         </div>
@@ -194,34 +194,14 @@ export const LiveMissionMap: React.FC = () => {
             </>
           )}
 
-          {layers.cargo && activeStationId === 'mcmurdo' && (
+          {layers.cargo && activeStationId === 'himadri' && (
             <>
-              {/* Christchurch C-17 corridor from North */}
+              {/* Longyearbyen Dornier 228 Air Corridor */}
               <path d="M 460 30 L 460 210" fill="none" stroke="#38BDF8" strokeWidth="3" strokeDasharray="8 4" className="animate-pulse" />
-              {/* USCGC Polar Star Icebreaker maritime channel */}
-              <path d="M 320 60 Q 380 140 460 210" fill="none" stroke="#F59E0B" strokeWidth="2.5" strokeDasharray="5 3" />
-              {/* South Pole Overland Traverse highway heading South */}
-              <path d="M 460 210 L 460 380" fill="none" stroke="#F59E0B" strokeWidth="3" strokeDasharray="6 4" />
-            </>
-          )}
-
-          {layers.cargo && activeStationId === 'southpole' && (
-            <>
-              {/* LC-130 Hercules Skiway approach line */}
-              <path d="M 200 120 L 460 210" fill="none" stroke="#38BDF8" strokeWidth="2.5" strokeDasharray="6 4" className="animate-pulse" />
-              {/* Overland traverse road from McMurdo */}
-              <path d="M 460 40 L 460 210" fill="none" stroke="#F59E0B" strokeWidth="3" strokeDasharray="6 4" />
-              {/* Dark Sector buried signal cables */}
-              <path d="M 460 210 L 600 290" fill="none" stroke="#A855F7" strokeWidth="2" strokeDasharray="3 3" />
-            </>
-          )}
-
-          {layers.cargo && activeStationId === 'neumayer' && (
-            <>
-              {/* RV Polarstern maritime channel from Atka Bay */}
-              <path d="M 460 40 Q 480 120 460 210" fill="none" stroke="#F59E0B" strokeWidth="2.5" strokeDasharray="6 4" className="animate-pulse" />
-              {/* Blue bamboo flagged garage ramp */}
-              <path d="M 460 210 L 410 320" fill="none" stroke="#00E5FF" strokeWidth="2" strokeDasharray="4 4" />
+              {/* MS Norbjørn maritime resupply channel into Kings Bay */}
+              <path d="M 320 70 Q 390 140 460 210" fill="none" stroke="#F59E0B" strokeWidth="2.5" strokeDasharray="5 3" />
+              {/* Kongsfjorden IndARC mooring acoustic transect */}
+              <path d="M 460 210 L 520 280" fill="none" stroke="#00E5FF" strokeWidth="2.5" strokeDasharray="4 4" />
             </>
           )}
         </svg>
@@ -263,47 +243,18 @@ export const LiveMissionMap: React.FC = () => {
           </>
         )}
 
-        {layers.hazards && activeStationId === 'mcmurdo' && (
+        {layers.hazards && activeStationId === 'himadri' && (
           <>
-            <div className="absolute top-[15%] right-[22%] p-2.5 rounded-xl bg-rose-950/50 border border-rose-600 text-[10px] font-mono text-rose-200 flex items-center gap-2 animate-pulse">
-              <AlertTriangle className="w-4 h-4 text-rose-400" />
+            <div className="absolute top-[16%] right-[18%] p-2.5 rounded-xl bg-amber-950/50 border border-amber-600 text-[10px] font-mono text-amber-200 flex items-center gap-2">
+              <AlertTriangle className="w-4 h-4 text-amber-400 animate-pulse" />
               <div>
-                <div className="font-bold">MOUNT EREBUS (ACTIVE VOLCANO)</div>
-                <div className="text-[9px] text-rose-300/80">Ash Plume Warning Sector</div>
+                <div className="font-bold">POLAR BEAR SAFETY ZONE (KINGS BAY)</div>
+                <div className="text-[9px] text-amber-300/80">Mandatory Flare Gun & Rifle Protocol Beyond Settlement</div>
               </div>
             </div>
-            <div className="absolute bottom-[18%] left-[25%] p-2 rounded-xl bg-sky-950/50 border border-sky-600 text-[10px] font-mono text-sky-300 flex items-center gap-1.5">
-              <Plane className="w-3.5 h-3.5 text-sky-400" />
-              <span>PHOENIX ICE RUNWAY & PEGASUS CORRIDOR</span>
-            </div>
-          </>
-        )}
-
-        {layers.hazards && activeStationId === 'southpole' && (
-          <>
-            <div className="absolute bottom-[20%] right-[18%] p-2.5 rounded-xl bg-purple-950/50 border border-purple-600 text-[10px] font-mono text-purple-200 flex items-center gap-2">
-              <Crosshair className="w-4 h-4 text-purple-400" />
-              <div>
-                <div className="font-bold">DARK SECTOR (CLEAN AIR ZONE)</div>
-                <div className="text-[9px] text-purple-300/80">SPT & BICEP Array • No RF Emissions</div>
-              </div>
-            </div>
-            <div className="absolute top-[18%] left-[18%] p-2 rounded-xl bg-rose-950/50 border border-rose-700 text-[10px] font-mono text-rose-300 flex items-center gap-1.5">
-              <Wind className="w-3.5 h-3.5 text-rose-400" />
-              <span>-58°C COLD SNAP • HYDRAULIC LOCKOUT ACTIVE</span>
-            </div>
-          </>
-        )}
-
-        {layers.hazards && activeStationId === 'neumayer' && (
-          <>
-            <div className="absolute top-[14%] right-[20%] p-2 rounded-xl bg-amber-950/50 border border-amber-600 text-[10px] font-mono text-amber-200 flex items-center gap-1.5">
-              <AlertTriangle className="w-3.5 h-3.5 text-amber-400" />
-              <span>ATKA BAY ICE SHELF CALVING FISSURE</span>
-            </div>
-            <div className="absolute bottom-[20%] left-[20%] p-2 rounded-xl bg-emerald-950/50 border border-emerald-600 text-[10px] font-mono text-emerald-300 flex items-center gap-1.5">
-              <Compass className="w-3.5 h-3.5 text-emerald-400" />
-              <span>EMPEROR PENGUIN SANCTUARY (NO-FLY ZONE)</span>
+            <div className="absolute bottom-[20%] left-[22%] p-2 rounded-xl bg-cyan-950/50 border border-cyan-600 text-[10px] font-mono text-cyan-300 flex items-center gap-1.5">
+              <Compass className="w-3.5 h-3.5 text-cyan-400" />
+              <span>INDARC SUBSURFACE OCEAN MOORING (192M DEPTH)</span>
             </div>
           </>
         )}
@@ -318,7 +269,7 @@ export const LiveMissionMap: React.FC = () => {
               name: activeStation.name,
               details: `${activeStation.region} • ${activeStation.operator} • Temp: ${activeStation.weather.tempC}°C`,
               status: activeStation.statusBadge,
-              coords: `${activeStation.coordinates[0]}° S, ${activeStation.coordinates[1]}° E`
+              coords: `${activeStation.coordinates[0] >= 0 ? `${activeStation.coordinates[0]}° N` : `${Math.abs(activeStation.coordinates[0])}° S`}, ${activeStation.coordinates[1] >= 0 ? `${activeStation.coordinates[1]}° E` : `${Math.abs(activeStation.coordinates[1])}° W`}`
             })}
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer group z-30"
           >
@@ -356,7 +307,7 @@ export const LiveMissionMap: React.FC = () => {
                 name: st.name,
                 details: `${st.region} • ${st.weather.tempC}°C • ${st.readinessScore}% Ready`,
                 status: 'OPERATIONAL',
-                coords: `${st.coordinates[0]}° S, ${st.coordinates[1]}° E`
+                coords: `${st.coordinates[0] >= 0 ? `${st.coordinates[0]}° N` : `${Math.abs(st.coordinates[0])}° S`}, ${st.coordinates[1] >= 0 ? `${st.coordinates[1]}° E` : `${Math.abs(st.coordinates[1])}° W`}`
               })}
               className="absolute cursor-pointer group z-20"
             >

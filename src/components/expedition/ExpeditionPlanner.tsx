@@ -40,7 +40,7 @@ export const ExpeditionPlanner: React.FC = () => {
     id: 'EXP-45-ASRE',
     name: 'Antarctic Deep Interior Continental Traverse 45',
     code: 'ASRE-45',
-    destination: 'Dome C & South Pole Transect',
+    destination: 'Larsemann Hills to Amery Ice Shelf Transect',
     station: 'Bharati Station Staging Base',
     leadCommander: 'Dr. Vikram Vardhan',
     startDate: '2027-11-01',
@@ -49,7 +49,7 @@ export const ExpeditionPlanner: React.FC = () => {
     requiredResources: '65,000 L Polar Diesel, 5,500 High-Calorie Rations',
     requiredEquipment: '3 PistenBully Heavy Snowcats, 2 Caterpillar 350 Gensets',
     transportMethod: 'Multi-modal: Icebreaker RV Bharati + LC-130 Ski-Plane',
-    emergencyPlan: 'SAR Protocol Alpha: Twin Otter Medevac to McMurdo Station'
+    emergencyPlan: 'SAR Protocol Alpha: Twin Otter Medevac to Cape Town or Maitri Station'
   });
 
   const handleAddChecklist = (e: React.FormEvent) => {

@@ -52,18 +52,10 @@ export const StationDigitalTwin: React.FC = () => {
       groundColor = 0x7E8793; // Schirmacher Oasis rocky permafrost & moraine gravel
       bgColor = 0x0A1324;
       fogColor = 0x0F1B30;
-    } else if (activeStationId === 'mcmurdo') {
-      groundColor = 0x484F59; // Volcanic basalt rock & coastal ice
-      bgColor = 0x08101E;
-      fogColor = 0x0C182E;
-    } else if (activeStationId === 'southpole') {
-      groundColor = 0xEDF5FC; // High plateau cryo ice
-      bgColor = 0x040514;     // Thin cryo atmosphere & cosmic black sky
-      fogColor = 0x080A20;
-    } else if (activeStationId === 'neumayer') {
-      groundColor = 0xD0E5FC; // Floating ice shelf
-      bgColor = 0x0C1830;     // Stormy maritime sky
-      fogColor = 0x122240;
+    } else if (activeStationId === 'himadri') {
+      groundColor = 0xB8D4E8; // Arctic Ny-Ålesund coastal tundra & fjord permafrost
+      bgColor = 0x071124;     // Arctic twilight / aurora sky
+      fogColor = 0x0B1D38;
     }
 
     const scene = new THREE.Scene();
@@ -818,77 +810,27 @@ export const StationDigitalTwin: React.FC = () => {
             </>
           )}
 
-          {activeStationId === 'mcmurdo' && (
+          {activeStationId === 'himadri' && (
             <>
               <div className="flex items-center justify-between gap-4">
-                <span className="text-slate-400">Building 155 Core:</span>
-                <span className="text-emerald-400 font-bold">NOMINAL (+21.2°C)</span>
+                <span className="text-slate-400">IndARC Fjord Mooring:</span>
+                <span className="text-emerald-400 font-bold">192M DEPTH ACTIVE (PING OK)</span>
               </div>
               <div className="flex items-center justify-between gap-4">
-                <span className="text-slate-400">CAT 3516 Mega-Genset:</span>
-                <span className="text-emerald-400 font-bold">850 kW (71% Load)</span>
+                <span className="text-slate-400">Gruvebadet Aerosol Lab:</span>
+                <span className="text-emerald-400 font-bold">LIDAR NOMINAL (0.02 AOD)</span>
               </div>
               <div className="flex items-center justify-between gap-4">
-                <span className="text-slate-400">Phoenix Ice Runway:</span>
-                <span className="text-emerald-400 font-bold">OPEN (C-17 AIRLIFT)</span>
+                <span className="text-slate-400">Kings Bay District Grid:</span>
+                <span className="text-cyan-400 font-bold">GRID LINKED (+18.4°C INDOOR)</span>
               </div>
               <div className="flex items-center justify-between gap-4">
-                <span className="text-slate-400">Pegasus Ice Roadway:</span>
-                <span className="text-amber-400 font-bold">SOLAR WARMING CAUTION</span>
+                <span className="text-slate-400">Kongsfjorden Drift Ice:</span>
+                <span className="text-amber-400 font-bold">PACK ICE WATCH (0.4 KT)</span>
               </div>
               <div className="flex items-center justify-between gap-4">
-                <span className="text-slate-400">Bulk Tank Farm:</span>
-                <span className="text-emerald-400 font-bold">188,000L (72d RUNWAY)</span>
-              </div>
-            </>
-          )}
-
-          {activeStationId === 'southpole' && (
-            <>
-              <div className="flex items-center justify-between gap-4">
-                <span className="text-slate-400">Elevated Station:</span>
-                <span className="text-emerald-400 font-bold">HYDRAULIC LEVEL (+21°C)</span>
-              </div>
-              <div className="flex items-center justify-between gap-4">
-                <span className="text-slate-400">SPT Telescope Cryo:</span>
-                <span className="text-rose-400 font-bold animate-pulse">HE VENTING ALARM</span>
-              </div>
-              <div className="flex items-center justify-between gap-4">
-                <span className="text-slate-400">Cummins QSK60 High-Alt:</span>
-                <span className="text-amber-400 font-bold">320 kW (78% Load)</span>
-              </div>
-              <div className="flex items-center justify-between gap-4">
-                <span className="text-slate-400">Skiway Cold Lockout:</span>
-                <span className="text-rose-400 font-bold">ACTIVE (&lt; -50°C LOCK)</span>
-              </div>
-              <div className="flex items-center justify-between gap-4">
-                <span className="text-slate-400">Underground AN-8 Fuel:</span>
-                <span className="text-amber-400 font-bold">14,200L (22d RUNWAY)</span>
-              </div>
-            </>
-          )}
-
-          {activeStationId === 'neumayer' && (
-            <>
-              <div className="flex items-center justify-between gap-4">
-                <span className="text-slate-400">16 Hydraulic Stilts:</span>
-                <span className="text-emerald-400 font-bold">AUTO-LEVEL (+4.2 cm/yr)</span>
-              </div>
-              <div className="flex items-center justify-between gap-4">
-                <span className="text-slate-400">Scania Cogeneration:</span>
-                <span className="text-emerald-400 font-bold">145 kW (88% Recovery)</span>
-              </div>
-              <div className="flex items-center justify-between gap-4">
-                <span className="text-slate-400">Atka Bay Calving Fissure:</span>
-                <span className="text-amber-400 font-bold animate-pulse">0.8 cm/day SPREAD</span>
-              </div>
-              <div className="flex items-center justify-between gap-4">
-                <span className="text-slate-400">Met Balloon Hall:</span>
-                <span className="text-cyan-400 font-bold">48 BOTTLES HELIUM</span>
-              </div>
-              <div className="flex items-center justify-between gap-4">
-                <span className="text-slate-400">Ekström Storm Front:</span>
-                <span className="text-rose-400 font-bold">42kt NE BLIZZARD</span>
+                <span className="text-slate-400">Arctic Gas Oil Reserve:</span>
+                <span className="text-emerald-400 font-bold">24,500L (175d RUNWAY)</span>
               </div>
             </>
           )}

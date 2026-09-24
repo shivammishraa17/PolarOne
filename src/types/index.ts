@@ -1,4 +1,4 @@
-export type StationId = 'bharati' | 'maitri' | 'mcmurdo' | 'southpole' | 'neumayer';
+export type StationId = 'bharati' | 'maitri' | 'himadri';
 
 export interface StationProfile {
   id: StationId;

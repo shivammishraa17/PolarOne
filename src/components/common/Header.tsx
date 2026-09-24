@@ -115,7 +115,7 @@ export const Header: React.FC<HeaderProps> = ({ onToggleNotifications, unreadCou
               <div className="flex items-center gap-1.5 text-[10px] font-mono text-slate-400">
                 <span className="text-cyan-300 font-semibold">{activeStation.region}</span>
                 <span>•</span>
-                <span>{activeStation.coordinates[0]}° S</span>
+                <span>{activeStation.coordinates[0] >= 0 ? `${activeStation.coordinates[0]}° N` : `${Math.abs(activeStation.coordinates[0])}° S`}</span>
               </div>
             </div>
           </button>
@@ -126,9 +126,9 @@ export const Header: React.FC<HeaderProps> = ({ onToggleNotifications, unreadCou
               <div className="px-3 py-1.5 border-b border-slate-800 text-[10px] font-mono font-bold text-slate-400 uppercase tracking-wider flex items-center justify-between">
                 <span className="flex items-center gap-1.5 text-cyan-400">
                   <Compass className="w-3.5 h-3.5" />
-                  Select Antarctic Research Station
+                  SELECT INDIAN POLAR RESEARCH STATION
                 </span>
-                <span className="text-slate-500">5 Active Sectors</span>
+                <span className="text-slate-500">3 Active Polar Stations</span>
               </div>
               <div className="py-1 max-h-[380px] overflow-y-auto divide-y divide-slate-800/40">
                 {allStations.map(st => {
@@ -164,7 +164,7 @@ export const Header: React.FC<HeaderProps> = ({ onToggleNotifications, unreadCou
                             {st.weather.tempC}°C
                           </span>
                           <span className="text-slate-400">
-                            {st.coordinates[0]}° S, {st.coordinates[1]}° E
+                            {st.coordinates[0] >= 0 ? `${st.coordinates[0]}° N` : `${Math.abs(st.coordinates[0])}° S`}, {st.coordinates[1] >= 0 ? `${st.coordinates[1]}° E` : `${Math.abs(st.coordinates[1])}° W`}
                           </span>
                           <span className={`ml-auto font-bold ${
                             st.readinessScore >= 80 ? 'text-emerald-400' : st.readinessScore >= 60 ? 'text-amber-400' : 'text-rose-400'

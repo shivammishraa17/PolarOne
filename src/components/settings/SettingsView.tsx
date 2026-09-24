@@ -133,7 +133,7 @@ export const SettingsView: React.FC = () => {
           {pendingSyncQueue.length === 0 ? (
             <div className="p-4 rounded-xl bg-[#0A142D] border border-slate-800 text-slate-400 text-center flex items-center justify-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-              <span>All local transactions synchronized with Maitri / McMurdo Central Relays.</span>
+              <span>All local transactions synchronized with NCPOR Polar Operations Central Relays.</span>
             </div>
           ) : (
             <div className="space-y-2 max-h-48 overflow-y-auto">

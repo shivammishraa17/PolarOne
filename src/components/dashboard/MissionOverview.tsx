@@ -67,7 +67,7 @@ export const MissionOverview: React.FC = () => {
               {expedition.name}
             </h2>
             <p className="text-xs text-slate-400 font-mono mt-0.5">
-              Sector: {activeStation.region} ({activeStation.coordinates[0]}° S, {activeStation.coordinates[1]}° E) | Elevation: {activeStation.elevationM}m | Mission Timeline: {expedition.startDate} to {expedition.endDate}
+              Sector: {activeStation.region} ({activeStation.coordinates[0] >= 0 ? `${activeStation.coordinates[0]}° N` : `${Math.abs(activeStation.coordinates[0])}° S`}, {activeStation.coordinates[1] >= 0 ? `${activeStation.coordinates[1]}° E` : `${Math.abs(activeStation.coordinates[1])}° W`}) | Elevation: {activeStation.elevationM}m | Mission Timeline: {expedition.startDate} to {expedition.endDate}
             </p>
           </div>
 
@@ -143,7 +143,7 @@ export const MissionOverview: React.FC = () => {
         <MetricCard
           label="Research Station"
           value={activeStation.shortName.toUpperCase()}
-          subtext={`${activeStation.coordinates[0]}° S, ${activeStation.coordinates[1]}° E`}
+          subtext={`${activeStation.coordinates[0] >= 0 ? `${activeStation.coordinates[0]}° N` : `${Math.abs(activeStation.coordinates[0])}° S`}, ${activeStation.coordinates[1] >= 0 ? `${activeStation.coordinates[1]}° E` : `${Math.abs(activeStation.coordinates[1])}° W`}`}
           icon={Compass}
           trendText={activeStation.region.split(',')[0]}
           onClick={() => setActiveTab('digitaltwin')}

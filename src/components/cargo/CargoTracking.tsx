@@ -343,17 +343,13 @@ export const CargoTracking: React.FC = () => {
                 <span>
                   {activeStationId === 'bharati' && 'SOUTHERN OCEAN & PRYDZ BAY SUPPLY CORRIDOR'}
                   {activeStationId === 'maitri' && 'QUEEN MAUD LAND & NOVO BLUE-ICE SUPPLY CORRIDOR'}
-                  {activeStationId === 'mcmurdo' && 'ROSS SEA & PACIFIC AIRLIFT LOGISTICS CORRIDOR'}
-                  {activeStationId === 'southpole' && 'MCMURDO TO SOUTH POLE HIGH-PLATEAU AIR & TRAVERSE CORRIDOR'}
-                  {activeStationId === 'neumayer' && 'SOUTH ATLANTIC & EKSTRÖM ICE SHELF MARITIME CORRIDOR'}
+                  {activeStationId === 'himadri' && 'SVALBARD & KONGSFJORDEN ARCTIC SUPPLY CORRIDOR'}
                 </span>
               </h3>
               <p className="text-[11px] text-slate-400 font-mono">
                 {activeStationId === 'bharati' && 'Multi-Modal Route: Cape Town Port ➔ Screaming 50s ➔ Prydz Bay Pack Ice ➔ Bharati Station'}
                 {activeStationId === 'maitri' && 'Multi-Modal Route: Cape Town Airfield ➔ Novolazarevskaya Skiway ➔ Kamenev Bight Traverse ➔ Maitri'}
-                {activeStationId === 'mcmurdo' && 'Multi-Modal Route: Christchurch NZ ➔ Ross Sea Channel ➔ Phoenix Ice Runway ➔ McMurdo Base'}
-                {activeStationId === 'southpole' && 'Multi-Modal Route: McMurdo Williams Field ➔ Transantarctic Pass ➔ Plateau Skiway ➔ South Pole'}
-                {activeStationId === 'neumayer' && 'Multi-Modal Route: Cape Town / Bremerhaven ➔ Atka Bay Sea Ice Edge ➔ Shelf Ramp ➔ Neumayer III'}
+                {activeStationId === 'himadri' && 'Multi-Modal Route: Oslo / Tromsø Hub ➔ Longyearbyen Hangar ➔ Dornier 228 / MS Norbjørn ➔ Himadri'}
               </p>
             </div>
             <span className="px-2.5 py-1 rounded-full bg-cyan-950 text-cyan-300 border border-cyan-700 text-[10px] font-bold font-mono">
@@ -396,52 +392,43 @@ export const CargoTracking: React.FC = () => {
               <div className="flex items-center gap-1.5 text-cyan-300 font-bold text-xs">
                 <MapPin className="w-3.5 h-3.5" />
                 <span>
-                  {activeStationId === 'mcmurdo' ? 'CHRISTCHURCH USAP HUB' :
-                   activeStationId === 'southpole' ? 'MCMURDO WILLIAMS FIELD' : 'CAPE TOWN SUPPLY HUB'}
+                  {activeStationId === 'himadri' ? 'TROMSØ / LONGYEARBYEN AIR STAGING' : 'CAPE TOWN SUPPLY HUB'}
                 </span>
               </div>
               <div className="text-[10px] text-slate-400 mt-0.5">
-                {activeStationId === 'mcmurdo' ? '-43.5° S, 172.6° E • Departure Air Base' :
-                 activeStationId === 'southpole' ? '-77.85° S, 166.70° E • Staging Skiway' : '-33.9° S, 18.6° E • Departure Wharf'}
+                {activeStationId === 'himadri' ? '78.2° N, 15.6° E • Svalbard Gateway Hangar' : '-33.9° S, 18.6° E • Departure Wharf'}
               </div>
               <div className="mt-1 text-[10px] text-emerald-400 font-bold">
-                {activeStationId === 'mcmurdo' ? 'C-17 Globemaster III Staged' :
-                 activeStationId === 'southpole' ? 'LC-130 Hercules Skiplane Ready' : 'LC-130 HERC-09 Staged'}
+                {activeStationId === 'himadri' ? 'Dornier 228 (Kings Bay AS) Staged' : 'LC-130 HERC-09 Staged'}
               </div>
             </div>
 
             {/* Waypoint 2: Mid-Route Weather Front / Terrain Pass */}
             <div className="absolute top-[42%] left-[34%] p-2 rounded-xl bg-amber-950/60 border border-amber-600/70">
               <div className="text-[10px] font-bold text-amber-300">
-                {activeStationId === 'southpole' ? 'TRANSANTARCTIC PASS' :
-                 activeStationId === 'mcmurdo' ? 'SOUTHERN OCEAN SWELL CONE' : 'SCREAMING 50s WAVE FRONT'}
+                {activeStationId === 'himadri' ? 'BARENTS SEA ARCTIC FRONT' : 'SCREAMING 50s WAVE FRONT'}
               </div>
               <div className="text-[9px] text-slate-400">
-                {activeStationId === 'southpole' ? '-85.0° S • 3,100m Pass Elevation' :
-                 activeStationId === 'mcmurdo' ? '-60.0° S • 5.8m Swell • 35kt Winds' : '-52.0° S • 6.2m Swell • 42kt Winds'}
+                {activeStationId === 'himadri' ? '74.5° N • 32kt Gale • Sea Spray Icing' : '-52.0° S • 6.2m Swell • 42kt Winds'}
               </div>
             </div>
 
             {/* Waypoint 3: Resupply Chokepoint / Pack Ice / Transfer */}
             <div className="absolute top-[65%] left-[55%] p-3 rounded-xl bg-rose-950/80 border border-rose-500 shadow-2xl animate-pulse">
               <div className="flex items-center gap-1.5 text-rose-200 font-bold text-xs">
-                {activeStationId === 'southpole' ? <Plane className="w-4 h-4 text-rose-300" /> : <Ship className="w-4 h-4 text-rose-300" />}
+                {activeStationId === 'himadri' ? <Plane className="w-4 h-4 text-cyan-300" /> : <Ship className="w-4 h-4 text-rose-300" />}
                 <span>
                   {activeStationId === 'bharati' && 'RV BHARATI (DELAYED +5d)'}
                   {activeStationId === 'maitri' && 'NOVOLAZAREVSKAYA SKIWAY'}
-                  {activeStationId === 'mcmurdo' && 'USCGC POLAR STAR ICEBREAKER'}
-                  {activeStationId === 'southpole' && 'HERC-04 (-58°C SKI LOCKOUT)'}
-                  {activeStationId === 'neumayer' && 'RV POLARSTERN (ATKA BAY DELAY +2d)'}
+                  {activeStationId === 'himadri' && 'NY-ÅLESUND HAMNERABBEN RUNWAY'}
                 </span>
               </div>
               <div className="text-[10px] text-rose-300 mt-0.5">
-                {activeStationId === 'southpole' ? 'Hydraulic Seal Lockout < -50°C' :
-                 activeStationId === 'mcmurdo' ? 'Carving 12-Mile Channel in Fast Ice' :
+                {activeStationId === 'himadri' ? 'Crosswind 22 kts • Runway Friction Check Nominal' :
                  activeStationId === 'maitri' ? 'Blue Ice Runway Groomed for Basler BT-67' : 'Pack Ice: 1.8m Multi-Year • Speed: 2.4 kts'}
               </div>
               <div className="text-[10px] text-white font-bold mt-1">
-                {activeStationId === 'southpole' ? 'Payload: 8,000L AN-8 Fuel & Cryo Compressor' :
-                 activeStationId === 'mcmurdo' ? 'Payload: 220,000 kg Bulk Resupply' :
+                {activeStationId === 'himadri' ? 'Payload: IndARC Mooring Electronics & 24,000L AG-75' :
                  activeStationId === 'maitri' ? 'Payload: 14,500 kg Polar Fuel Drums' : 'Payload: 12,000L Jet A-1 & 3,500 Rations'}
               </div>
             </div>
@@ -452,7 +439,7 @@ export const CargoTracking: React.FC = () => {
                 <MapPin className="w-4 h-4 text-emerald-400" />
                 <span>{activeStation.name.toUpperCase()}</span>
               </div>
-              <div className="text-[10px] text-slate-300 mt-0.5">{activeStation.coordinates[0]}° S, {activeStation.coordinates[1]}° E</div>
+              <div className="text-[10px] text-slate-300 mt-0.5">{activeStation.coordinates[0] >= 0 ? `${activeStation.coordinates[0]}° N` : `${Math.abs(activeStation.coordinates[0])}° S`}, {activeStation.coordinates[1] >= 0 ? `${activeStation.coordinates[1]}° E` : `${Math.abs(activeStation.coordinates[1])}° W`}</div>
               <div className="text-[10px] text-cyan-300 font-bold mt-1">
                 {activeStation.statusBadge}
               </div>
@@ -462,8 +449,7 @@ export const CargoTracking: React.FC = () => {
             <div className="absolute bottom-[4%] right-[3%] p-2 rounded-xl bg-cyan-950/80 border border-cyan-600">
               <div className="text-[10px] font-bold text-cyan-300">LOCAL TRAVERSE</div>
               <div className="text-[9px] text-slate-400">
-                {activeStationId === 'mcmurdo' ? 'Terra Bus • Phoenix Shuttle' :
-                 activeStationId === 'southpole' ? 'Snowcat MT865 • Dark Sector' : 'PistenBully Traverse Convoy'}
+                {activeStationId === 'himadri' ? 'Polarcirkel Workboat • Lynx Snowmobiles' : 'PistenBully Traverse Convoy'}
               </div>
             </div>
           </div>
@@ -475,7 +461,7 @@ export const CargoTracking: React.FC = () => {
         isOpen={isAddModalOpen}
         onClose={() => setIsAddModalOpen(false)}
         title="REGISTER NEW CARGO CONSIGNMENT"
-        subtitle="Schedule supply shipment into Antarctic logistics pipeline"
+        subtitle="Schedule supply shipment into Indian polar logistics pipeline"
       >
         <form
           onSubmit={(e) => {

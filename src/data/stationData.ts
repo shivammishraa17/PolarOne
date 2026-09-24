@@ -57,71 +57,27 @@ export const stationProfiles: Record<StationId, StationProfile> = {
     statusBadge: 'CONTINENTAL OASIS HUB',
     tagline: 'Year-round station situated on rocky permafrost adjacent to Lake Priyadarshini'
   },
-  mcmurdo: {
-    id: 'mcmurdo',
-    name: 'McMurdo Station',
-    shortName: 'McMurdo',
-    region: 'Ross Island, McMurdo Sound',
-    country: 'United States',
-    operator: 'United States Antarctic Program (USAP / NSF)',
-    flagEmoji: '🇺🇸',
-    coordinates: [-77.8463, 166.6682],
-    elevationM: 24,
-    utcOffsetHours: 12,
+  himadri: {
+    id: 'himadri',
+    name: 'Himadri Research Station',
+    shortName: 'Himadri',
+    region: 'Ny-Ålesund, Spitsbergen, Svalbard',
+    country: 'India',
+    operator: 'NCPOR / Ministry of Earth Sciences',
+    flagEmoji: '🇮🇳',
+    coordinates: [78.9236, 11.9224],
+    elevationM: 14,
+    utcOffsetHours: 1,
     weather: {
-      tempC: -22,
-      windKt: 18,
-      windDir: 'S',
-      daylight: '24h Polar Daylight',
-      condition: 'Heavy Logistics Airlift'
+      tempC: -14,
+      windKt: 22,
+      windDir: 'NW',
+      daylight: 'Arctic Twilight',
+      condition: 'Kongsfjorden Fjord Watch'
     },
-    readinessScore: 91,
-    statusBadge: 'PRIMARY ANTARCTIC AIR & HARBOR HUB',
-    tagline: 'Largest Antarctic base with deep-water ice wharf, Pegasus runway, and Terra Bus logistics'
-  },
-  southpole: {
-    id: 'southpole',
-    name: 'Amundsen-Scott South Pole Station',
-    shortName: 'South Pole',
-    region: 'Geographic South Pole, Polar Plateau',
-    country: 'United States / Intl',
-    operator: 'National Science Foundation (NSF)',
-    flagEmoji: '🇺🇸',
-    coordinates: [-90.0000, 0.0000],
-    elevationM: 2835,
-    utcOffsetHours: 12,
-    weather: {
-      tempC: -58,
-      windKt: 14,
-      windDir: 'Grid N',
-      daylight: '24h Polar Sun',
-      condition: 'Extreme Altitude Cryo-Zone'
-    },
-    readinessScore: 54,
-    statusBadge: 'CRITICAL COLD PLATEAU (-58°C)',
-    tagline: 'Elevated station on hydraulic pylons at 2,835m altitude housing IceCube & South Pole Telescope'
-  },
-  neumayer: {
-    id: 'neumayer',
-    name: 'Neumayer Station III',
-    shortName: 'Neumayer III',
-    region: 'Ekström Ice Shelf, Atka Bay',
-    country: 'Germany',
-    operator: 'Alfred Wegener Institute (AWI)',
-    flagEmoji: '🇩🇪',
-    coordinates: [-70.6744, -8.2742],
-    elevationM: 43,
-    utcOffsetHours: 0,
-    weather: {
-      tempC: -31,
-      windKt: 42,
-      windDir: 'NE',
-      daylight: '24h Polar Daylight',
-      condition: 'Storm Front Warning'
-    },
-    readinessScore: 74,
-    statusBadge: 'HYDRAULIC FLOATING SHELF PLATFORM',
-    tagline: 'Advanced aerodynamic station elevated on 16 hydraulic jacks on a moving floating ice shelf'
+    readinessScore: 88,
+    statusBadge: 'ARCTIC FJORD RESEARCH HUB',
+    tagline: "India's permanent Arctic station conducting IndARC underwater mooring and atmospheric research"
   }
 };
 
@@ -159,7 +115,7 @@ const bharatiData: StationDataset = {
     requiredResourcesSummary: '45,000 L Polar Diesel, 4,800 High-Calorie Rations, 120 Medical Units',
     requiredEquipmentSummary: '2 PistenBully Snowcats, 1 Hägglunds Carrier, 2 CAT Diesel Gensets, 1 Deep Ice Corer',
     transportMethod: 'Multi-modal: Icebreaker Vessel RV Bharati + LC-130 Air + Overland Snowcat Traverse',
-    emergencyPlanSummary: 'SAR Protocol Red: Medevac via Twin Otter skiway to Cape Town or McMurdo relay.',
+    emergencyPlanSummary: 'SAR Protocol Red: Medevac via Twin Otter skiway to Cape Town or Maitri relay.',
     checklist: [
       { id: 'CHK-B1', task: 'Pre-winter Fuel Tank Ullage Verification', assignedTo: 'Chief Eng. Rajesh Nair', completed: true, critical: true },
       { id: 'CHK-B2', task: 'Primary Genset CAT 350 Valve Lash Adjustment', assignedTo: 'Diesel Tech Marcus Lind', completed: true, critical: true },
@@ -1237,883 +1193,429 @@ const maitriData: StationDataset = {
 };
 
 // ==========================================
-// 3. MCMURDO DATASET (Ross Island)
+// 3. HIMADRI DATASET (Ny-Ålesund, Svalbard, Arctic)
 // ==========================================
-const mcmurdoData: StationDataset = {
-  profile: stationProfiles.mcmurdo,
+const himadriData: StationDataset = {
+  profile: stationProfiles.himadri,
   expedition: {
-    id: 'EXP-ODF-2026',
-    name: 'Operation Deep Freeze 2026 Logistic Airlift',
-    code: 'ODF-2026',
-    phase: 'Resupply & Station Support',
-    progress: 82,
-    startDate: '2026-10-01',
-    endDate: '2027-04-15',
-    destination: 'McMurdo Station & Ross Ice Shelf Traverses',
-    station: 'McMurdo Station (-77.8463° S, 166.6682° E)',
-    leadCommander: 'Cmdr. Sarah Jenkins (USAP Logistics Director)',
-    teamMemberCount: 48,
-    readinessScore: 91,
-    requiredResourcesSummary: '180,000 L Polar Diesel, 14,000 Pre-Packaged Meals, Heavy Dozer Spares',
-    requiredEquipmentSummary: '4 CAT D8T Bulldozers, Ivan the Terra Bus, 3 LC-130 Skiway Graders, 1 Icebreaker Escort',
-    transportMethod: 'Heavy Maritime Icebreaker (USCGC Polar Star) + C-17 Globemaster Heavy Airlift',
-    emergencyPlanSummary: 'SAR Protocol Gold: C-17 Medevac direct to Christchurch NZ Hospital.',
+    id: 'EXP-18-HIM',
+    name: '18th Indian Arctic Expedition (Ny-Ålesund)',
+    code: 'HIMADRI-18',
+    phase: 'Traverse & Fieldwork',
+    progress: 74,
+    startDate: '2026-03-01',
+    endDate: '2026-11-30',
+    destination: 'Himadri Station, Ny-Ålesund, Svalbard',
+    station: 'Himadri Research Station (78.9236° N, 11.9224° E)',
+    leadCommander: 'Dr. Arindam Sen (Arctic Mission Director)',
+    teamMemberCount: 14,
+    readinessScore: 88,
+    requiredResourcesSummary: '24,000 L Arctic Gas Oil, Aerosol Spectrometers, Cold-Climate Diving Gear',
+    requiredEquipmentSummary: '1 Polarcirkel Workboat, 3 Lynx Snowmobiles, 1 IndARC Mooring Acoustic Transceiver, Gruvebadet Air Samplers',
+    transportMethod: 'Flight Tromsø/Longyearbyen + Dornier 228 to Ny-Ålesund + Polarcirkel Marine Transect',
+    emergencyPlanSummary: 'SAR Protocol Svalbard: Kings Bay AS Polar Bear Defense & Super Puma Medevac to Longyearbyen Hospital.',
     checklist: [
-      { id: 'CHK-MC1', task: 'Phoenix Ice Runway Laser Grade & Friction Test', assignedTo: 'Airfield Mgr. Dave Miller', completed: true, critical: true },
-      { id: 'CHK-MC2', task: 'Central Power Plant Caterpillar 3516 1000h Service', assignedTo: 'Chief Mech. Chuck OBrien', completed: true, critical: true },
-      { id: 'CHK-MC3', task: 'USCGC Polar Star Ice Channel Escort Briefing', assignedTo: 'Harbor Master T. Kowalski', completed: true, critical: true },
-      { id: 'CHK-MC4', task: 'South Pole Overland Traverse Fuel Bladder Inspection', assignedTo: 'Traverse Lead Rick Dalton', completed: true, critical: true },
-      { id: 'CHK-MC5', task: 'Williams Field LC-130 Skiway Compaction', assignedTo: 'Airfield Team Bravo', completed: false, critical: false }
+      { id: 'CHK-H1', task: 'IndARC Subsurface Mooring Acoustic Telemetry Ping Check', assignedTo: 'Oceanographer Dr. Kavita Nair', completed: true, critical: true },
+      { id: 'CHK-H2', task: 'Gruvebadet Atmospheric Aerosol Lidar Calibration', assignedTo: 'Atmospheric Physicist Dev Sharma', completed: true, critical: true },
+      { id: 'CHK-H3', task: 'Kongsfjorden Sea Ice Thickness & CTD Profiling', assignedTo: 'Glaciologist Tanvi Joshi', completed: false, critical: true },
+      { id: 'CHK-H4', task: 'Polar Bear Perimeter Trip-Wire & Flare Launcher Inspection', assignedTo: 'Safety Officer Erik Lindqvist', completed: true, critical: true },
+      { id: 'CHK-H5', task: 'Kings Bay District Heating & Backup Generator Coupling', assignedTo: 'Station Eng. Rajesh Kulkarni', completed: true, critical: false },
+      { id: 'CHK-H6', task: 'Polarcirkel Workboat Outboard Anti-Ice Deicing Test', assignedTo: 'Marine Tech Lars Hansen', completed: false, critical: true }
     ]
   },
   inventory: [
     {
-      id: 'INV-MC-FUEL-01',
-      name: 'Bulk Arctic Jet A-1 Fuel (Phoenix Airfield Depot)',
+      id: 'INV-H-FUEL-01',
+      name: 'Arctic-Grade Marine Gas Oil (AG-75 Low Pour Point)',
       category: 'Fuel',
-      currentStock: 68000,
+      currentStock: 24500,
       unit: 'Liters',
-      threshold: 25000,
-      dailyConsumption: 1150,
-      estimatedDaysRemaining: 59,
+      threshold: 8000,
+      dailyConsumption: 140,
+      estimatedDaysRemaining: 175,
       reorderStatus: 'Nominal',
-      locationSector: 'Hut Point Fuel Farm Tank 4',
-      lastAudited: 'Today at 04:00 UTC'
+      locationSector: 'Kings Bay Tank Farm - Bay 4',
+      lastAudited: 'Today at 08:30 UTC'
     },
     {
-      id: 'INV-MC-FUEL-02',
-      name: 'Special Low-Temp Polar Diesel #1 (AN-8)',
+      id: 'INV-H-FUEL-02',
+      name: 'Aviation Kerosene Jet A-1 (Ny-Ålesund Skiway Buffer)',
       category: 'Fuel',
-      currentStock: 120000,
+      currentStock: 8200,
       unit: 'Liters',
-      threshold: 40000,
-      dailyConsumption: 1650,
-      estimatedDaysRemaining: 72,
+      threshold: 3500,
+      dailyConsumption: 95,
+      estimatedDaysRemaining: 86,
       reorderStatus: 'Nominal',
-      locationSector: 'Central Tank Farm 1',
+      locationSector: 'Hamnerabben Airfield Fuel Depot',
       lastAudited: 'Yesterday'
     },
     {
-      id: 'INV-MC-FOOD-01',
-      name: 'C-17 Palletized Commercial Food Packs (4000 kcal)',
+      id: 'INV-H-FOOD-01',
+      name: 'High-Calorie Arctic Field Rations & Freeze-Dried Provisions',
       category: 'Food',
-      currentStock: 14000,
+      currentStock: 2800,
       unit: 'Meals',
-      threshold: 5000,
-      dailyConsumption: 152,
-      estimatedDaysRemaining: 92,
+      threshold: 1000,
+      dailyConsumption: 42,
+      estimatedDaysRemaining: 66,
       reorderStatus: 'Nominal',
-      locationSector: 'Building 155 Main Galley Warehouse',
-      lastAudited: 'Yesterday'
+      locationSector: 'Himadri Main Pantry & Cold Locker',
+      lastAudited: 'Today'
     },
     {
-      id: 'INV-MC-SPARE-01',
-      name: 'Caterpillar D8T Track Rollers & Hydraulic Seals',
-      category: 'Spare parts',
-      currentStock: 45,
-      unit: 'Units',
+      id: 'INV-H-MED-01',
+      name: 'Arctic Hypothermia, Trauma & Hyperbaric Emergency Kits',
+      category: 'Medical supplies',
+      currentStock: 48,
+      unit: 'Kits',
       threshold: 15,
-      dailyConsumption: 0.3,
-      estimatedDaysRemaining: 150,
+      dailyConsumption: 0.1,
+      estimatedDaysRemaining: 480,
       reorderStatus: 'Nominal',
-      locationSector: 'Heavy Shop Garage Bay 3',
+      locationSector: 'Ny-Ålesund Medical Clinic / Himadri Sickbay',
       lastAudited: '3 days ago'
     },
     {
-      id: 'INV-MC-MED-01',
-      name: 'Trauma & Surgical Center Surgical Packs',
-      category: 'Medical supplies',
-      currentStock: 420,
-      unit: 'Packs',
-      threshold: 120,
-      dailyConsumption: 1.2,
-      estimatedDaysRemaining: 350,
+      id: 'INV-H-SPARE-01',
+      name: 'IndARC Fjord Mooring Acoustic Sensors & Hydrophone Batteries',
+      category: 'Spare parts',
+      currentStock: 5,
+      unit: 'Units',
+      threshold: 6,
+      dailyConsumption: 0.05,
+      estimatedDaysRemaining: 100,
+      reorderStatus: 'Reorder Due',
+      locationSector: 'Himadri Marine Tech Workshop',
+      lastAudited: '2 days ago'
+    },
+    {
+      id: 'INV-H-SCI-01',
+      name: 'Gruvebadet High-Volume Aerosol Filter Cassettes',
+      category: 'Scientific equipment',
+      currentStock: 64,
+      unit: 'Filters',
+      threshold: 20,
+      dailyConsumption: 0.5,
+      estimatedDaysRemaining: 128,
       reorderStatus: 'Nominal',
-      locationSector: 'McMurdo Medical Center',
-      lastAudited: '1 week ago'
+      locationSector: 'Gruvebadet Atmospheric Laboratory',
+      lastAudited: 'Yesterday'
+    },
+    {
+      id: 'INV-H-SAF-01',
+      name: 'Polar Bear Deterrent Signal Flares & 12G Non-Lethal Slugs',
+      category: 'Safety equipment',
+      currentStock: 120,
+      unit: 'Rounds',
+      threshold: 40,
+      dailyConsumption: 0.1,
+      estimatedDaysRemaining: 999,
+      reorderStatus: 'Nominal',
+      locationSector: 'Armory Lockbox - Ny-Ålesund Safety Station',
+      lastAudited: 'Today'
     }
   ],
   cargo: [
     {
-      id: 'CARGO-MC-01',
-      description: 'USCGC Polar Star Heavy Maritime Resupply Vessel',
-      category: 'Fuel',
-      weightKg: 220000,
-      quantity: 1,
-      unit: 'Vessel',
-      origin: 'Christchurch Lyttelton Port',
-      destination: 'McMurdo Ice Pier',
-      transportMode: 'Icebreaker Vessel',
-      currentLocation: 'Ross Sea Ice Edge Channel',
-      coordinates: [-76.4000, 168.2000],
-      expectedArrival: '2026-11-26',
-      status: 'In Transit',
-      delayDays: 0,
-      priority: 'CRITICAL'
-    },
-    {
-      id: 'CARGO-MC-02',
-      description: 'C-17 Globemaster III Heavy Air Bridge Flight #14',
-      category: 'Food',
-      weightKg: 32000,
-      quantity: 16,
-      unit: 'Pallets',
-      origin: 'Christchurch Air Base',
-      destination: 'Phoenix Ice Runway',
-      transportMode: 'LC-130 Hercules',
-      currentLocation: 'Final Approach Phoenix Runway',
-      coordinates: [-77.9200, 166.7500],
-      expectedArrival: '2026-11-20 20:30 UTC',
+      id: 'CARGO-H-01',
+      description: 'IndARC Fjord Oceanographic Mooring Acoustic Sensor Replacements',
+      category: 'Scientific equipment',
+      weightKg: 850,
+      quantity: 4,
+      unit: 'Crates',
+      origin: 'NCPOR Goa Headquarters',
+      destination: 'Himadri Station, Ny-Ålesund',
+      transportMode: 'Twin Otter Ski-Plane',
+      currentLocation: 'Longyearbyen Staging Hangar (Svalbard Lufthavn)',
+      coordinates: [78.2232, 15.6267],
+      expectedArrival: '2026-09-30',
       status: 'In Transit',
       delayDays: 0,
       priority: 'HIGH'
+    },
+    {
+      id: 'CARGO-H-02',
+      description: 'Gruvebadet Multi-Wavelength Aerosol Spectrometer Optic Cells',
+      category: 'Scientific equipment',
+      weightKg: 210,
+      quantity: 2,
+      unit: 'Containers',
+      origin: 'IIT Delhi / NCPOR Logistics Hub',
+      destination: 'Gruvebadet Atmospheric Lab',
+      transportMode: 'Icebreaker Vessel',
+      currentLocation: 'Aboard MS Norbjørn - Barents Sea Transect',
+      coordinates: [72.1500, 19.8200],
+      expectedArrival: '2026-10-05',
+      status: 'In Transit',
+      delayDays: 0,
+      priority: 'ROUTINE'
+    },
+    {
+      id: 'CARGO-H-03',
+      description: 'Lynx Commander Snowmobile Cold-Start Ignition Modules & Tracks',
+      category: 'Spare parts',
+      weightKg: 95,
+      quantity: 3,
+      unit: 'Boxes',
+      origin: 'Kings Bay Logistics Oslo Depot',
+      destination: 'Himadri Equipment Shed',
+      transportMode: 'Twin Otter Ski-Plane',
+      currentLocation: 'Ny-Ålesund Hamnerabben Airfield Hangar',
+      coordinates: [78.9236, 11.9224],
+      expectedArrival: '2026-09-22',
+      status: 'At Station',
+      delayDays: 0,
+      priority: 'ROUTINE'
     }
   ],
   assets: [
     {
-      id: 'AST-MC-GEN-01',
-      name: 'Caterpillar 3516 1.2 MW Mega-Genset (Unit 1)',
-      type: 'Primary Diesel Genset',
-      locationSector: 'Building 136 - Central Power Plant',
-      conditionPct: 96,
-      hoursRun: 8900,
-      lastInspection: '2026-11-16',
-      nextMaintenance: '2026-12-25',
+      id: 'AST-H-BOAT-01',
+      name: 'Polarcirkel 845 Workboat "Varun" (Kongsfjorden Transect)',
+      type: 'Tracked Personnel Carrier',
+      locationSector: 'Ny-Ålesund Marine Harbor Jetty',
+      conditionPct: 92,
+      hoursRun: 640,
+      lastInspection: '2026-08-20',
+      nextMaintenance: '2026-11-15',
       status: 'Operational',
       telemetry: {
-        tempC: 86,
-        powerDrawKw: 850,
-        fuelLevelPct: 92,
-        loadPct: 71
+        tempC: 4,
+        powerDrawKw: 28,
+        fuelLevelPct: 88,
+        loadPct: 52
       }
     },
     {
-      id: 'AST-MC-BUS-01',
-      name: 'Ivan the Terra Bus (56-Passenger Ice Carrier)',
-      type: 'Tracked Personnel Carrier',
-      locationSector: 'Building 190 - Vehicle Maintenance Facility',
-      conditionPct: 94,
-      hoursRun: 2800,
-      lastInspection: '2026-11-18',
-      nextMaintenance: '2026-12-18',
+      id: 'AST-H-MOOR-01',
+      name: 'IndARC Subsurface Oceanographic Mooring System',
+      type: 'Automated Weather Station',
+      locationSector: 'Kongsfjorden Outer Basin (192m depth)',
+      conditionPct: 89,
+      hoursRun: 8760,
+      lastInspection: '2025-08-10',
+      nextMaintenance: '2026-10-10',
       status: 'Operational',
       telemetry: {
-        tempC: 78,
-        powerDrawKw: 0,
-        fuelLevelPct: 86,
+        tempC: -1,
+        powerDrawKw: 5,
         loadPct: 40
       }
     },
     {
-      id: 'AST-MC-DOZ-01',
-      name: 'Caterpillar D8T Low-Ground-Pressure Bulldozer',
-      type: 'Heavy Traverse Snowcat',
-      locationSector: 'Phoenix Runway Staging Pad',
-      conditionPct: 91,
-      hoursRun: 4200,
-      lastInspection: '2026-11-14',
-      nextMaintenance: '2026-12-14',
+      id: 'AST-H-LIDAR-01',
+      name: 'Gruvebadet Atmospheric Aerosol Lidar & Spectrometer',
+      type: 'Automated Weather Station',
+      locationSector: 'Gruvebadet Atmospheric Laboratory',
+      conditionPct: 96,
+      hoursRun: 4320,
+      lastInspection: '2026-07-14',
+      nextMaintenance: '2026-12-01',
       status: 'Operational',
       telemetry: {
-        tempC: 82,
+        tempC: 18,
+        powerDrawKw: 12,
+        loadPct: 35
+      }
+    },
+    {
+      id: 'AST-H-SNOW-01',
+      name: 'Lynx Commander 900 ACE Arctic Utility Snowmobile',
+      type: 'Skidoo Snowmobile',
+      locationSector: 'Sector B - Himadri Equipment Shed',
+      conditionPct: 88,
+      hoursRun: 380,
+      lastInspection: '2026-09-02',
+      nextMaintenance: '2026-11-20',
+      status: 'Operational',
+      telemetry: {
+        tempC: 68,
         powerDrawKw: 0,
-        fuelLevelPct: 75,
-        loadPct: 65
+        fuelLevelPct: 82,
+        loadPct: 30
+      }
+    },
+    {
+      id: 'AST-H-GEN-01',
+      name: 'Himadri Emergency Backup Volvo Penta 65 kVA Genset',
+      type: 'Backup Diesel Genset',
+      locationSector: 'Sector D - Ny-Ålesund Auxiliary Bay',
+      conditionPct: 95,
+      hoursRun: 120,
+      lastInspection: '2026-08-28',
+      nextMaintenance: '2026-11-28',
+      status: 'Operational',
+      telemetry: {
+        tempC: 22,
+        powerDrawKw: 0,
+        fuelLevelPct: 94,
+        loadPct: 10
       }
     }
   ],
   personnel: [
     {
-      id: 'PER-MC-01',
-      name: 'Cmdr. Sarah Jenkins',
-      role: 'USAP Station Manager & Logistics Director',
+      id: 'PER-H-01',
+      name: 'Dr. Arindam Sen',
+      role: 'Station Leader & Senior Arctic Climatologist',
       team: 'Command Staff',
-      currentLocation: 'Building 155 - Station Ops Hub',
-      coordinates: [-77.8463, 166.6682],
-      currentAssignment: 'Coordinating C-17 airlift flight window and harbor icebreaker discharge',
+      currentLocation: 'Sector A - Himadri Main Office & Science Lab',
+      coordinates: [78.9236, 11.9224],
+      currentAssignment: 'Leading Kongsfjorden glaciology transect and Svalbard research coordination',
       availability: 'On Duty',
       contactStatus: 'Local Mesh WiFi',
       safetyStatus: 'Nominal',
-      emergencyRole: 'Station Emergency Coordinator',
-      vitals: { heartRateBpm: 68, bodyTempC: 37.0, spo2Pct: 99 }
+      emergencyRole: 'Station Commander',
+      vitals: { heartRateBpm: 68, bodyTempC: 36.8, spo2Pct: 99 }
     },
     {
-      id: 'PER-MC-02',
-      name: 'Maj. Dave Miller',
-      role: 'Chief Airfield Manager (Phoenix & Williams)',
-      team: 'Logistics',
-      currentLocation: 'Phoenix Ice Runway Tower',
-      coordinates: [-77.9200, 166.7500],
-      currentAssignment: 'Monitoring surface melt pools and guiding inbound C-17 touch down',
+      id: 'PER-H-02',
+      name: 'Dr. Kavita Nair',
+      role: 'Principal Oceanographer (IndARC Mooring Lead)',
+      team: 'Oceanography Unit',
+      currentLocation: 'Marine Harbor Jetty / Polarcirkel Boat',
+      coordinates: [78.9280, 11.9350],
+      currentAssignment: 'Monitoring IndARC subsurface hydrophone telemetry and acoustic data uplink',
       availability: 'On Duty',
       contactStatus: 'VHF Channel 4',
       safetyStatus: 'Nominal',
-      emergencyRole: 'Airfield SAR Incident Commander',
-      vitals: { heartRateBpm: 75, bodyTempC: 36.8, spo2Pct: 98 }
+      emergencyRole: 'Marine Operations Lead',
+      vitals: { heartRateBpm: 75, bodyTempC: 36.7, spo2Pct: 98 }
     },
     {
-      id: 'PER-MC-03',
-      name: 'Chuck OBrien',
-      role: 'Heavy Mechanical Superintendent',
-      team: 'Infrastructure',
-      currentLocation: 'Heavy Shop Garage Bay 1',
-      coordinates: [-77.8470, 166.6710],
-      currentAssignment: 'Overseeing Caterpillar 3516 turbine heat balance',
+      id: 'PER-H-03',
+      name: 'Dev Sharma',
+      role: 'Atmospheric Physicist (Gruvebadet Lab)',
+      team: 'Atmospheric Physics',
+      currentLocation: 'Gruvebadet Atmospheric Laboratory',
+      coordinates: [78.9180, 11.8950],
+      currentAssignment: 'Continuous black carbon and aerosol optical depth measurement runs',
       availability: 'On Duty',
       contactStatus: 'Local Mesh WiFi',
       safetyStatus: 'Nominal',
-      emergencyRole: 'Engineering Disaster Response',
-      vitals: { heartRateBpm: 80, bodyTempC: 36.9, spo2Pct: 97 }
+      emergencyRole: 'Atmospheric Safety Officer',
+      vitals: { heartRateBpm: 72, bodyTempC: 37.0, spo2Pct: 98 }
+    },
+    {
+      id: 'PER-H-04',
+      name: 'Erik Lindqvist',
+      role: 'Svalbard Polar Bear Safety & Field Guide',
+      team: 'Field Safety',
+      currentLocation: 'Ny-Ålesund Western Perimeter Look-out',
+      coordinates: [78.9240, 11.9050],
+      currentAssignment: 'Perimeter wildlife watch and escorting researchers beyond settlement zone',
+      availability: 'On Duty',
+      contactStatus: 'VHF Channel 4',
+      safetyStatus: 'Nominal',
+      emergencyRole: 'Chief Safety & SAR Guide',
+      vitals: { heartRateBpm: 70, bodyTempC: 36.9, spo2Pct: 99 }
     }
   ],
   alerts: [
     {
-      id: 'ALT-MC-01',
-      timestamp: '25 min ago',
-      title: 'Warm Midday Solar Absorption on Pegasus Corridor',
-      description: 'Black volcanic dust deposits causing localized soft spots on sea-ice route. Heavy trucks restricted.',
+      id: 'ALT-H-01',
+      timestamp: '14 min ago',
+      title: 'IndARC Fjord Mooring Telemetry Acoustic Ping Delay',
+      description: 'Acoustic transponder ping interval from 192m depth hydrophone increased to 120s due to thermal stratification.',
       severity: 'WARNING',
-      category: 'Weather',
-      acknowledged: true,
-      actionRecommendation: 'Divert heavy flatbeds to Williams Field compacted snowpack.'
+      category: 'Comms',
+      acknowledged: false,
+      relatedEntityId: 'AST-H-MOOR-01',
+      actionRecommendation: 'Perform high-gain hydrophone frequency scan from Polarcirkel workboat.'
     },
     {
-      id: 'ALT-MC-02',
-      timestamp: '1 hr ago',
-      title: 'South Pole Fuel Traverse Convoy Reached Mile 240',
-      description: 'Quadtrac convoy completed crevasse shear zone passage successfully. All 45,000L fuel secure.',
+      id: 'ALT-H-02',
+      timestamp: '35 min ago',
+      title: 'Ny-Ålesund Kings Bay Polar Bear Perimeter Clearance',
+      description: 'Kings Bay AS safety patrol confirmed adult polar bear moved 3 km northwest towards Blomstrandhalvøya.',
       severity: 'INFO',
-      category: 'Cargo',
+      category: 'Medical',
       acknowledged: true,
-      actionRecommendation: 'Maintain daily scheduled HF check-ins at 08:00 and 20:00 UTC.'
+      actionRecommendation: 'Fieldwork cleared within 1.5 km perimeter; flare guns and rifles remain mandatory.'
     }
   ],
   incidents: [
     {
-      id: 'INC-2026-14',
-      title: 'Vehicle Malfunction: Terra Bus Steering Hydraulic Hose Rupture',
-      type: 'Vehicle failure',
-      locationSector: 'Pegasus Roadway (Mile 7.2)',
-      coordinates: [-77.8900, 166.7100],
-      severity: 'MEDIUM',
+      id: 'INC-2026-18',
+      title: 'Marine Hazard: Kongsfjorden Drift Ice Floe Approaching IndARC Buoy',
+      type: 'Extreme weather',
+      locationSector: 'Kongsfjorden Outer Basin (2.4 km Offshore)',
+      coordinates: [78.9280, 11.9350],
+      severity: 'HIGH',
       status: 'REPORTED',
-      reportedAt: '16:05 UTC',
-      nearestTeam: 'Heavy Shop Mobile Repair Truck',
-      availableVehicles: ['Caterpillar Service Truck 04', 'Tracked Hagglunds'],
-      requiredEquipment: ['Hydraulic Crimper', '50L Tellus Arctic Oil', 'Absorbent Spill Pads'],
-      medicalResources: ['Vehicle First Aid Kit'],
-      suggestedResponseTeam: ['Chuck OBrien', 'Mech Tech Todd Adams'],
+      reportedAt: '13:40 UTC',
+      nearestTeam: 'Marine Safety & Fjord Logistics (Dr. Kavita Nair + Lars Hansen)',
+      availableVehicles: ['Polarcirkel 845 Workboat "Varun"'],
+      requiredEquipment: ['Marine Tow Line', 'Sonar Ice Profiler', 'GPS Position Buoy'],
+      medicalResources: ['Marine Immersion Hypothermia Kit'],
+      suggestedResponseTeam: ['Dr. Kavita Nair (Oceanographer)', 'Lars Hansen (Marine Tech)'],
       responseEtaMinutes: 12,
       incidentTimeline: [
-        { time: '16:05 UTC', event: 'Terra Bus operator reported loss of hydraulic steering pressure', actor: 'Driver Dan Larson' },
-        { time: '16:08 UTC', event: 'Passengers transferred to backup passenger van', actor: 'Transport Dispatch' }
+        { time: '13:40 UTC', event: 'Drift ice floe (approx 45m diameter) detected 400m northeast of IndARC surface marker', actor: 'Dr. Kavita Nair' },
+        { time: '13:48 UTC', event: 'Polarcirkel workboat dispatched to monitor ice drift velocity and trajectory', actor: 'Station Leader Dr. Arindam Sen' }
       ],
-      recommendedPlan: 'Deploy Mobile Repair Truck to Mile 7.2, clamp failed return line, and refill Arctic hydraulic fluid.'
+      recommendedPlan: 'Deploy Polarcirkel workboat with ice-deflection towing harness to nudge floe clear of surface beacon.'
     }
   ],
   scenarios: [
     {
-      id: 'SCEN-MC-1',
-      name: 'Scenario 1: Christchurch C-17 Air Bridge Grounded by Volcanic Ash',
+      id: 'SCEN-H-1',
+      name: 'Scenario 1: Kongsfjorden Rapid Autumn Sea-Ice Freeze-up',
       cargoDelayedDays: 6,
-      fuelConsumptionIncreasePct: 0,
+      fuelConsumptionIncreasePct: 12,
       generatorFailedHours: 0,
       personnelDelta: 0,
       weatherCondition: 'Normal Arctic Air',
-      description: 'Mount Erebus or regional atmospheric disturbance suspends high-altitude air bridge from New Zealand.'
+      description: 'Rapid pack ice consolidation closes Ny-Ålesund harbor 3 weeks earlier than normal, shifting supply to Dornier ski-flights.'
+    },
+    {
+      id: 'SCEN-H-2',
+      name: 'Scenario 2: Svalbard Extreme Polar Low Storm Front',
+      cargoDelayedDays: 5,
+      fuelConsumptionIncreasePct: 8,
+      generatorFailedHours: 0,
+      personnelDelta: 0,
+      weatherCondition: 'Class 5 Polar Blizzard',
+      description: 'Severe Arctic cyclonic polar low generates 50kt winds and whiteout, restricting personnel inside Ny-Ålesund station complex.'
     }
   ],
   history: [
     {
-      id: 'HIST-MC-2024',
-      missionName: 'Operation Deep Freeze 2024 Resupply',
-      season: '2023-2024',
-      station: 'McMurdo Station',
-      commander: 'Capt. E. Vance',
+      id: 'HIST-H-17',
+      missionName: '17th Indian Arctic Expedition (Ny-Ålesund)',
+      season: '2024-2025',
+      station: 'Himadri Research Station',
+      commander: 'Dr. K. S. Rao',
       outcome: 'Success',
-      totalDurationDays: 450,
-      totalPersonnel: 180,
-      incidentsLogged: 8,
-      fuelConsumedLiters: 1200000,
+      totalDurationDays: 275,
+      totalPersonnel: 14,
+      incidentsLogged: 2,
+      fuelConsumedLiters: 42000,
+      cargoDelaysDays: 3,
+      lessonsLearned: [
+        'Autonomous IndARC mooring acoustic logger successfully recovered after 12 months continuous deep-water recording.',
+        'Ny-Ålesund district heating microgrid reduced winter diesel consumption by 15%.'
+      ],
+      appliedToCurrent: 'Enhanced acoustic telemetry transceiver and high-endurance sensors installed in HIMADRI-18.'
+    },
+    {
+      id: 'HIST-H-01',
+      missionName: 'Inaugural Indian Arctic Expedition (Himadri Dedication)',
+      season: '2008',
+      station: 'Himadri Research Station',
+      commander: 'Dr. Rasik Ravindra',
+      outcome: 'Success',
+      totalDurationDays: 120,
+      totalPersonnel: 8,
+      incidentsLogged: 1,
+      fuelConsumedLiters: 18000,
       cargoDelaysDays: 2,
       lessonsLearned: [
-        'Laser grading Phoenix ice runway reduced tire wear on C-17 Globemasters by 40%.',
-        'Bulk fuel transfer manifold operated at 100% capacity during 72-hour tanker docking window.'
+        'Permanent establishment of Himadri station at Ny-Ålesund (79° N) established India as an active Arctic research nation.',
+        'Formal scientific collaboration protocol established with Kings Bay AS and Norwegian Polar Institute.'
       ],
-      appliedToCurrent: 'Automated laser leveling implemented for entire 2026 runway season.'
-    }
-  ]
-};
-
-// ==========================================
-// 4. AMUNDSEN-SCOTT SOUTH POLE DATASET
-// ==========================================
-const southpoleData: StationDataset = {
-  profile: stationProfiles.southpole,
-  expedition: {
-    id: 'EXP-PS-27',
-    name: 'Pole-Star 27 Astrophysics & IceCube Deep Coring',
-    code: 'PS-27',
-    phase: 'Winterization',
-    progress: 58,
-    startDate: '2026-10-25',
-    endDate: '2027-04-01',
-    destination: 'Geographic South Pole (Plateau 2,835m)',
-    station: 'Amundsen-Scott South Pole Station (-90.0000° S, 0.0000° E)',
-    leadCommander: 'Dr. Robert Mercer (Station Director)',
-    teamMemberCount: 38,
-    readinessScore: 54,
-    requiredResourcesSummary: '35,000 L AN-8 Polar Kerosene, 5,200 High-Altitude Rations, Medical O2 Cylinders',
-    requiredEquipmentSummary: 'Elevated Station Hydraulic Jacking Pylons, 2 Cummins QSK60 Gensets, BICEP Telescope',
-    transportMethod: 'Ski-equipped LC-130 Hercules flights from McMurdo (Subject to -50°C cold lockout)',
-    emergencyPlanSummary: 'SAR Protocol White: Winter flight lockout active below -50°C. Total autonomous survival.',
-    checklist: [
-      { id: 'CHK-SP1', task: 'Elevated Station Hydraulic Leveling Leg Synchronization', assignedTo: 'Chief Eng. Sven Larson', completed: true, critical: true },
-      { id: 'CHK-SP2', task: 'Cummins QSK60 Cold-Air Fuel Pre-Heater Verification', assignedTo: 'Power Tech Alex Wong', completed: true, critical: true },
-      { id: 'CHK-SP3', task: 'South Pole Telescope (SPT) Liquid Helium Refill', assignedTo: 'Astrophysicist Linda Zhao', completed: false, critical: true },
-      { id: 'CHK-SP4', task: 'Hyperbaric Altitude Chamber Seal & Oxygen Flow Check', assignedTo: 'Dr. Marcus Brody', completed: true, critical: true },
-      { id: 'CHK-SP5', task: 'Skiway Marker Flags & Emergency Strobe Batteries', assignedTo: 'Skiway Lead Travis Cole', completed: false, critical: false }
-    ]
-  },
-  inventory: [
-    {
-      id: 'INV-SP-FUEL-01',
-      name: 'Extreme Cryo Arctic Fuel AN-8 (Fuel Depot)',
-      category: 'Fuel',
-      currentStock: 14200,
-      unit: 'Liters',
-      threshold: 18000,
-      dailyConsumption: 640,
-      estimatedDaysRemaining: 22,
-      reorderStatus: 'Critical Depletion',
-      locationSector: 'Underground Fuel Arch Tank 1',
-      lastAudited: 'Today at 02:00 UTC'
-    },
-    {
-      id: 'INV-SP-CRYO-01',
-      name: 'Cryogenic Liquid Helium (4.2 Kelvin)',
-      category: 'Scientific equipment',
-      currentStock: 600,
-      unit: 'Liters',
-      threshold: 900,
-      dailyConsumption: 38,
-      estimatedDaysRemaining: 16,
-      reorderStatus: 'Critical Depletion',
-      locationSector: 'Dark Sector Telescope Lab',
-      lastAudited: 'Yesterday'
-    },
-    {
-      id: 'INV-SP-MED-01',
-      name: 'Medical Liquid Oxygen High-Pressure Cylinders',
-      category: 'Medical supplies',
-      currentStock: 42,
-      unit: 'Cylinders',
-      threshold: 40,
-      dailyConsumption: 3,
-      estimatedDaysRemaining: 14,
-      reorderStatus: 'Critical Depletion',
-      locationSector: 'Station Medical Clinic Arch',
-      lastAudited: 'Today'
-    },
-    {
-      id: 'INV-SP-FOOD-01',
-      name: 'Extreme Polar Altitude Rations (4800 kcal)',
-      category: 'Food',
-      currentStock: 5200,
-      unit: 'Meals',
-      threshold: 2800,
-      dailyConsumption: 114,
-      estimatedDaysRemaining: 45,
-      reorderStatus: 'Nominal',
-      locationSector: 'Main Hab Food Lockers',
-      lastAudited: '3 days ago'
-    }
-  ],
-  cargo: [
-    {
-      id: 'CARGO-SP-01',
-      description: 'LC-130 Flight Herc-04 carrying 8,000 L AN-8 Fuel',
-      category: 'Fuel',
-      weightKg: 6400,
-      quantity: 1,
-      unit: 'Flight',
-      origin: 'McMurdo Williams Field',
-      destination: 'Amundsen-Scott Skiway',
-      transportMode: 'LC-130 Hercules',
-      currentLocation: 'Delayed at McMurdo (-58°C ski hydraulic lockout)',
-      coordinates: [-77.8500, 166.7000],
-      expectedArrival: 'Delayed +3d',
-      status: 'Delayed',
-      delayDays: 3,
-      priority: 'CRITICAL'
-    },
-    {
-      id: 'CARGO-SP-02',
-      description: 'South Pole Telescope Helium Compressor Replacement Parts',
-      category: 'Scientific equipment',
-      weightKg: 280,
-      quantity: 2,
-      unit: 'Crates',
-      origin: 'Chicago Astrophysics Lab',
-      destination: 'Dark Sector SPT Building',
-      transportMode: 'LC-130 Hercules',
-      currentLocation: 'Staged at McMurdo Cargo Facility',
-      coordinates: [-77.8500, 166.7000],
-      expectedArrival: 'Awaiting Flight Herc-04',
-      status: 'Delayed',
-      delayDays: 3,
-      priority: 'CRITICAL'
-    }
-  ],
-  assets: [
-    {
-      id: 'AST-SP-GEN-01',
-      name: 'Cummins QSK60 High-Altitude Diesel Genset (Unit 1)',
-      type: 'Primary Diesel Genset',
-      locationSector: 'Power Plant Arch',
-      conditionPct: 82,
-      hoursRun: 6400,
-      lastInspection: '2026-11-15',
-      nextMaintenance: '2026-12-05',
-      status: 'Warning',
-      telemetry: {
-        tempC: 92,
-        powerDrawKw: 320,
-        fuelLevelPct: 70,
-        loadPct: 78
-      }
-    },
-    {
-      id: 'AST-SP-TEL-01',
-      name: 'South Pole 10-meter Sub-millimeter Telescope (SPT)',
-      type: 'Ice Core Deep Drill',
-      locationSector: 'Dark Sector Facility',
-      conditionPct: 79,
-      hoursRun: 14200,
-      lastInspection: '2026-11-17',
-      nextMaintenance: '2026-11-28 (Cryo Compressor Due)',
-      status: 'Warning',
-      telemetry: {
-        tempC: -58,
-        powerDrawKw: 45,
-        loadPct: 85
-      }
-    },
-    {
-      id: 'AST-SP-JACK-01',
-      name: 'Elevated Station 36-Leg Synchronous Hydraulic Jack System',
-      type: 'Primary Diesel Genset',
-      locationSector: 'Station Steel Sub-Structure',
-      conditionPct: 94,
-      hoursRun: 18000,
-      lastInspection: '2026-11-10',
-      nextMaintenance: '2027-01-15',
-      status: 'Operational',
-      telemetry: {
-        tempC: -45,
-        powerDrawKw: 12,
-        loadPct: 30
-      }
-    }
-  ],
-  personnel: [
-    {
-      id: 'PER-SP-01',
-      name: 'Dr. Robert Mercer',
-      role: 'Station Director & Observational Cosmologist',
-      team: 'Command Staff',
-      currentLocation: 'Elevated Station - B2 Hub',
-      coordinates: [-90.0000, 0.0000],
-      currentAssignment: 'Managing -58°C extreme cold protocol and fuel conservation directive',
-      availability: 'On Duty',
-      contactStatus: 'Local Mesh WiFi',
-      safetyStatus: 'Nominal',
-      emergencyRole: 'Station Director',
-      vitals: { heartRateBpm: 82, bodyTempC: 36.8, spo2Pct: 93 }
-    },
-    {
-      id: 'PER-SP-02',
-      name: 'Dr. Marcus Brody',
-      role: 'Altitude & Extreme Cold Flight Surgeon',
-      team: 'Medical Unit',
-      currentLocation: 'Elevated Station - Medical Ward',
-      coordinates: [-90.0000, 0.0000],
-      currentAssignment: 'Monitoring crew SpO2 saturation at 2,835m effective physiological altitude',
-      availability: 'On Duty',
-      contactStatus: 'Local Mesh WiFi',
-      safetyStatus: 'Nominal',
-      emergencyRole: 'Chief Triage Physician',
-      vitals: { heartRateBpm: 76, bodyTempC: 37.1, spo2Pct: 95 }
-    },
-    {
-      id: 'PER-SP-03',
-      name: 'Dr. Linda Zhao',
-      role: 'Astrophysicist (BICEP & SPT Lead)',
-      team: 'Science Lab',
-      currentLocation: 'Dark Sector SPT Control Room',
-      coordinates: [-89.9980, 0.0020],
-      currentAssignment: 'Troubleshooting helium compressor flow oscillation',
-      availability: 'On Duty',
-      contactStatus: 'Local Mesh WiFi',
-      safetyStatus: 'Cold Stress Alert',
-      emergencyRole: 'Cryogenic Containment Lead',
-      vitals: { heartRateBpm: 92, bodyTempC: 36.2, spo2Pct: 91 }
-    }
-  ],
-  alerts: [
-    {
-      id: 'ALT-SP-01',
-      timestamp: '8 min ago',
-      title: 'Extreme Low Temperature: -58°C (Ski Lockout Active)',
-      description: 'LC-130 ski hydraulic seals cannot operate below -50°C. Resupply flight Herc-04 grounded at McMurdo.',
-      severity: 'CRITICAL',
-      category: 'Weather',
-      acknowledged: false,
-      actionRecommendation: 'Enforce emergency heating conservation; restrict outdoor movements to <15 min.'
-    },
-    {
-      id: 'ALT-SP-02',
-      timestamp: '30 min ago',
-      title: 'AN-8 Fuel Runway Low: 22 Days Remaining',
-      description: 'Storage buffer approaching mandatory 20-day winter baseline threshold.',
-      severity: 'WARNING',
-      category: 'Fuel',
-      acknowledged: false,
-      relatedEntityId: 'INV-SP-FUEL-01',
-      actionRecommendation: 'Lower Dark Sector auxiliary lab heating setpoint by 3°C.'
-    }
-  ],
-  incidents: [
-    {
-      id: 'INC-2026-03',
-      title: 'Cryogenic Failure: South Pole Telescope Helium Pressure Venting',
-      type: 'Equipment failure',
-      locationSector: 'Dark Sector SPT Receiver Cabin',
-      coordinates: [-89.9980, 0.0020],
-      severity: 'CRITICAL',
-      status: 'REPORTED',
-      reportedAt: '13:50 UTC',
-      nearestTeam: 'Cryo Engineering Response (Linda Zhao + Sven Larson)',
-      availableVehicles: ['Enclosed Heated Snowcat 01'],
-      requiredEquipment: ['Helium Recovery Manifold', 'Cryo-Gloves & Face Shield', 'Vacuum Gauge'],
-      medicalResources: ['Cold Vapor Burn Gel Kit'],
-      suggestedResponseTeam: ['Sven Larson (Chief Eng)', 'Linda Zhao (Cryo Specialist)'],
-      responseEtaMinutes: 5,
-      incidentTimeline: [
-        { time: '13:50 UTC', event: 'Receiver cryostat pressure climbed to 1.8 bar; automated vent opened', actor: 'SPT Telemetry System' },
-        { time: '13:54 UTC', event: 'Audio alarm sounded in Dark Sector control room', actor: 'Dr. Linda Zhao' }
-      ],
-      recommendedPlan: 'Drive heated Snowcat to Dark Sector, cycle bypass compressor valve, and verify helium recovery circuit.'
-    }
-  ],
-  scenarios: [
-    {
-      id: 'SCEN-SP-1',
-      name: 'Scenario 1: -65°C Polar Lockout Grounding Flights for 14 Days',
-      cargoDelayedDays: 14,
-      fuelConsumptionIncreasePct: 22,
-      generatorFailedHours: 0,
-      personnelDelta: 0,
-      weatherCondition: 'Class 5 Polar Blizzard',
-      description: 'Record cold plateau snap locks out all ski-aircraft; base relies entirely on underground AN-8 fuel reserves.'
-    }
-  ],
-  history: [
-    {
-      id: 'HIST-SP-2023',
-      missionName: 'Pole-Star 24 Overwinter Season',
-      season: '2023-2024',
-      station: 'Amundsen-Scott South Pole Station',
-      commander: 'Dr. K. Higgins',
-      outcome: 'Success',
-      totalDurationDays: 365,
-      totalPersonnel: 39,
-      incidentsLogged: 4,
-      fuelConsumedLiters: 480000,
-      cargoDelaysDays: 11,
-      lessonsLearned: [
-        'Hydraulic fluid in elevator jacks requires continuous 25W heating jackets below -55°C.',
-        'Supplementary medical oxygen significantly reduced sleep apnea incidents at 2,835m.'
-      ],
-      appliedToCurrent: 'Dedicated heating jackets installed on all 36 foundation stilts for PS-27.'
-    }
-  ]
-};
-
-// ==========================================
-// 5. NEUMAYER STATION III DATASET (Ekström)
-// ==========================================
-const neumayerData: StationDataset = {
-  profile: stationProfiles.neumayer,
-  expedition: {
-    id: 'EXP-NEX-42',
-    name: 'Neumayer Expedition XLII - Ekström Shelf Dynamics',
-    code: 'NEX-42',
-    phase: 'Traverse & Fieldwork',
-    progress: 74,
-    startDate: '2026-10-10',
-    endDate: '2027-03-31',
-    destination: 'Ekström Ice Shelf & Atka Bay Sea Ice',
-    station: 'Neumayer Station III (-70.6744° S, -8.2742° W)',
-    leadCommander: 'Dr. Hannelore Weber (Station Leader)',
-    teamMemberCount: 18,
-    readinessScore: 74,
-    requiredResourcesSummary: '42,000 L Low-Sulfur Polar Gasoil, Helium Sounding Cylinders, Hydraulic Jacking Oil',
-    requiredEquipmentSummary: '16 Synchronous Hydraulic Jack Stilts, 2 Scania Cogeneration Gensets, 1 Balloon Shed',
-    transportMethod: 'Research Vessel Polarstern Container Offload at Atka Bay Sea Ice Shelf Edge',
-    emergencyPlanSummary: 'SAR Protocol Blue: Medevac via Dornier 228 to Troll or Cape Town.',
-    checklist: [
-      { id: 'CHK-N1', task: 'Hydraulic Synchronous Jacking System Quarterly Lift (+1.1 cm)', assignedTo: 'Hydraulic Eng. Klaus Becker', completed: true, critical: true },
-      { id: 'CHK-N2', task: 'Scania DC13 Cogeneration Thermal Recovery Audit (88% SLA)', assignedTo: 'Power Eng. Otto Braun', completed: true, critical: true },
-      { id: 'CHK-N3', task: 'Atka Bay Fast-Ice Edge Calving Crack GPR Sonar Survey', assignedTo: 'Geophysicist Astrid Lindholm', completed: false, critical: true },
-      { id: 'CHK-N4', task: 'Atmospheric Ozone Sounding Balloon Auto-Launcher Calibration', assignedTo: 'Meteorologist Birgit Wagner', completed: true, critical: false },
-      { id: 'CHK-N5', task: 'Atka Bay Marine Acoustic Hydrophone Recording Verification', assignedTo: 'Marine Biologist Lars Fischer', completed: false, critical: false }
-    ]
-  },
-  inventory: [
-    {
-      id: 'INV-N-FUEL-01',
-      name: 'Low-Sulfur Arctic Polar Gasoil (Underground Garage)',
-      category: 'Fuel',
-      currentStock: 34000,
-      unit: 'Liters',
-      threshold: 12000,
-      dailyConsumption: 650,
-      estimatedDaysRemaining: 52,
-      reorderStatus: 'Nominal',
-      locationSector: 'Under-Platform Fuel Depot Arch',
-      lastAudited: 'Today at 05:00 UTC'
-    },
-    {
-      id: 'INV-N-GAS-01',
-      name: 'Atmospheric Helium Gas Sounding Bottles',
-      category: 'Scientific equipment',
-      currentStock: 48,
-      unit: 'Bottles',
-      threshold: 50,
-      dailyConsumption: 3.4,
-      estimatedDaysRemaining: 14,
-      reorderStatus: 'Reorder Due',
-      locationSector: 'Balloon Inflation Hall',
-      lastAudited: 'Yesterday'
-    },
-    {
-      id: 'INV-N-HYD-01',
-      name: 'Bio-Degradable Extreme-Low-Temp Hydraulic Fluid',
-      category: 'Spare parts',
-      currentStock: 1200,
-      unit: 'Liters',
-      threshold: 500,
-      dailyConsumption: 12,
-      estimatedDaysRemaining: 100,
-      reorderStatus: 'Nominal',
-      locationSector: 'Hydraulic Jack Sub-Platform',
-      lastAudited: '2 days ago'
-    },
-    {
-      id: 'INV-N-FOOD-01',
-      name: 'Freeze-Dried Vacuum Rations (AWI Standard)',
-      category: 'Food',
-      currentStock: 2600,
-      unit: 'Meals',
-      threshold: 1400,
-      dailyConsumption: 54,
-      estimatedDaysRemaining: 48,
-      reorderStatus: 'Nominal',
-      locationSector: 'Station Galley Store',
-      lastAudited: '4 days ago'
-    }
-  ],
-  cargo: [
-    {
-      id: 'CARGO-N-01',
-      description: 'RV Polarstern Container Discharge (14.5 Metric Tons)',
-      category: 'Spare parts',
-      weightKg: 14500,
-      quantity: 6,
-      unit: 'Containers',
-      origin: 'Bremerhaven Port / Cape Town',
-      destination: 'Neumayer Station III Garage',
-      transportMode: 'Icebreaker Vessel',
-      currentLocation: 'Atka Bay Sea Ice Edge (Discharge suspended by storm swell)',
-      coordinates: [-70.5200, -8.1500],
-      expectedArrival: '2026-11-24 (Delayed +2d)',
-      status: 'Delayed',
-      delayDays: 2,
-      priority: 'HIGH'
-    }
-  ],
-  assets: [
-    {
-      id: 'AST-N-JACK-01',
-      name: '16 Hydraulic Synchronous Jacking Stilts (+4.2 cm/yr)',
-      type: 'Primary Diesel Genset',
-      locationSector: 'Ice Shelf Platform Foundation',
-      conditionPct: 96,
-      hoursRun: 14500,
-      lastInspection: '2026-11-18',
-      nextMaintenance: '2027-02-10',
-      status: 'Operational',
-      telemetry: {
-        tempC: -31,
-        powerDrawKw: 18,
-        loadPct: 42
-      }
-    },
-    {
-      id: 'AST-N-GEN-01',
-      name: 'Scania DC13 Cogeneration Power Plant (160 kW)',
-      type: 'Primary Diesel Genset',
-      locationSector: 'Platform Powerhouse Module',
-      conditionPct: 94,
-      hoursRun: 5120,
-      lastInspection: '2026-11-14',
-      nextMaintenance: '2026-12-14',
-      status: 'Operational',
-      telemetry: {
-        tempC: 82,
-        powerDrawKw: 145,
-        fuelLevelPct: 88,
-        loadPct: 65
-      }
-    },
-    {
-      id: 'AST-N-GROOM-01',
-      name: 'Kässbohrer PistenBully PB300 Polar Groomer',
-      type: 'Heavy Traverse Snowcat',
-      locationSector: 'Sub-Ice Shelf Garage Ramp',
-      conditionPct: 90,
-      hoursRun: 1840,
-      lastInspection: '2026-11-10',
-      nextMaintenance: '2026-12-05',
-      status: 'Operational',
-      telemetry: {
-        tempC: 75,
-        powerDrawKw: 0,
-        fuelLevelPct: 92,
-        loadPct: 35
-      }
-    }
-  ],
-  personnel: [
-    {
-      id: 'PER-N-01',
-      name: 'Dr. Hannelore Weber',
-      role: 'Station Leader & Marine Geophysicist',
-      team: 'Command Staff',
-      currentLocation: 'Main Deck Operations Room',
-      coordinates: [-70.6744, -8.2742],
-      currentAssignment: 'Coordinating RV Polarstern Atka Bay discharge and 42kt storm precautions',
-      availability: 'On Duty',
-      contactStatus: 'Local Mesh WiFi',
-      safetyStatus: 'Nominal',
-      emergencyRole: 'Station Leader Alpha',
-      vitals: { heartRateBpm: 72, bodyTempC: 36.9, spo2Pct: 99 }
-    },
-    {
-      id: 'PER-N-02',
-      name: 'Klaus Becker',
-      role: 'Chief Hydraulic & Structural Engineer',
-      team: 'Infrastructure',
-      currentLocation: 'Hydraulic Jacking Gallery',
-      coordinates: [-70.6748, -8.2740],
-      currentAssignment: 'Monitoring synchronous level sensors across all 16 hydraulic pylons',
-      availability: 'On Duty',
-      contactStatus: 'Local Mesh WiFi',
-      safetyStatus: 'Nominal',
-      emergencyRole: 'Structural Integrity Officer',
-      vitals: { heartRateBpm: 78, bodyTempC: 36.8, spo2Pct: 98 }
-    },
-    {
-      id: 'PER-N-03',
-      name: 'Dr. Astrid Lindholm',
-      role: 'Sea Ice & Shelf Dynamics Specialist',
-      team: 'Science Lab',
-      currentLocation: 'Sub-Ice Garage Staging Ramp',
-      coordinates: [-70.6740, -8.2750],
-      currentAssignment: 'Prepping radar sonar sled to inspect Atka Bay calving crack',
-      availability: 'Field Traverse',
-      contactStatus: 'VHF Channel 4',
-      safetyStatus: 'Extreme Weather Protocol',
-      emergencyRole: 'Glaciological SAR Officer',
-      vitals: { heartRateBpm: 86, bodyTempC: 36.6, spo2Pct: 97 }
-    }
-  ],
-  alerts: [
-    {
-      id: 'ALT-N-01',
-      timestamp: '14 min ago',
-      title: 'Class 4 Gale Warning: 42kt Winds with Zero Visibility',
-      description: 'Ekström ice shelf storm front intensifying. Surface blizzard protocol active.',
-      severity: 'CRITICAL',
-      category: 'Weather',
-      acknowledged: false,
-      actionRecommendation: 'Secure outer garage ramp; halt all vehicular traverse to Atka Bay.'
-    },
-    {
-      id: 'ALT-N-02',
-      timestamp: '50 min ago',
-      title: 'Atka Bay Calving Fissure Monitored',
-      description: 'Fissure opened 4.2 km North of sea-ice offload ramp; movement rate 0.8 cm/day.',
-      severity: 'WARNING',
-      category: 'Cargo',
-      acknowledged: true,
-      actionRecommendation: 'Mark safe bypass corridor with orange bamboo radar reflectors.'
-    }
-  ],
-  incidents: [
-    {
-      id: 'INC-2026-19',
-      title: 'Ice Shelf Hazard: Atka Bay Offload Ramp Fissure Expansion',
-      type: 'Extreme weather',
-      locationSector: 'Atka Bay Shelf Edge (4.2 km North of Base)',
-      coordinates: [-70.6350, -8.2400],
-      severity: 'HIGH',
-      status: 'REPORTED',
-      reportedAt: '16:40 UTC',
-      nearestTeam: 'Shelf Dynamics Team (Dr. Astrid Lindholm + Klaus Becker)',
-      availableVehicles: ['PistenBully PB300 with GPR Array'],
-      requiredEquipment: ['Ground Penetrating Radar', 'Laser Distance Meter', 'Bamboo Route Markers'],
-      medicalResources: ['Cold Exposure Hypothermia Kit'],
-      suggestedResponseTeam: ['Astrid Lindholm (Glaciologist)', 'Klaus Becker (Hydraulic Eng)'],
-      responseEtaMinutes: 10,
-      incidentTimeline: [
-        { time: '16:40 UTC', event: 'Satellite InSAR alert flagged accelerated fissure displacement at ramp', actor: 'AWI Remote Sensing Center' },
-        { time: '16:45 UTC', event: 'Reconnaissance snowcat staged at garage ramp', actor: 'Klaus Becker' }
-      ],
-      recommendedPlan: 'Deploy GPR snowcat along flagged route to map crevasse boundaries and re-anchor sea-ice discharge ramp.'
-    }
-  ],
-  scenarios: [
-    {
-      id: 'SCEN-N-1',
-      name: 'Scenario 1: Atka Bay Ice Shelf Calving Event',
-      cargoDelayedDays: 8,
-      fuelConsumptionIncreasePct: 10,
-      generatorFailedHours: 0,
-      personnelDelta: 0,
-      weatherCondition: 'Class 5 Polar Blizzard',
-      description: 'A 2 km ice shelf section separates into Atka Bay, severing direct sea-ice access for RV Polarstern.'
-    }
-  ],
-  history: [
-    {
-      id: 'HIST-N-41',
-      missionName: 'Neumayer Expedition XLI',
-      season: '2024-2025',
-      station: 'Neumayer Station III',
-      commander: 'Dr. M. Schultz',
-      outcome: 'Success',
-      totalDurationDays: 415,
-      totalPersonnel: 19,
-      incidentsLogged: 4,
-      fuelConsumedLiters: 195000,
-      cargoDelaysDays: 5,
-      lessonsLearned: [
-        'Hydraulic lifting cycles performed before heavy snowfall prevented snow drift burial.',
-        'Atka Bay Emperor Penguin sanctuary boundaries successfully maintained during resupply operations.'
-      ],
-      appliedToCurrent: 'Synchronous automated jacking schedule established in NEX-42.'
+      appliedToCurrent: 'Standard operational protocol for continuous Arctic atmospheric and marine studies established.'
     }
   ]
 };
@@ -2121,7 +1623,5 @@ const neumayerData: StationDataset = {
 export const stationsDataset: Record<StationId, StationDataset> = {
   bharati: bharatiData,
   maitri: maitriData,
-  mcmurdo: mcmurdoData,
-  southpole: southpoleData,
-  neumayer: neumayerData
+  himadri: himadriData
 };
